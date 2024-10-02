@@ -1,3 +1,5 @@
+### I am adding another readme in the Assets folder to have clear instructions for some stuff
+
 Hey I'm Cole
 
 helllooo yay

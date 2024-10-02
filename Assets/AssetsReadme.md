@@ -1,0 +1,1 @@
+### DO NOT EDIT ANYTHING IN SCENES (Unless absolutely nessacary), instead locate correponding object in the "Prefabs" folder and edit that. It will sync across all scenes which removes possiblity of mis-matching
