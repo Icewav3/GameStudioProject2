@@ -22,12 +22,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         _playerInput = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-    }
-    /// <summary>
-    /// face player toward movement direction and linearly translate players position over time
-    /// </summary>
-    private void FixedUpdate()
-    {
-        transform.position += _playerInput * (speed * Time.deltaTime); 
+        transform.position += _playerInput * (speed * Time.deltaTime);
     }
 }
