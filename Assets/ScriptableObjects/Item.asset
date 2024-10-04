@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3cda1c65454d4fb6c9e3dcc4139067, type: 3}
   m_Name: Item
   m_EditorClassIdentifier: 
+  internalID: 
+  displayName: 
+  description: 
+  sprite: {fileID: 0}
