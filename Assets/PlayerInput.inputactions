@@ -1,0 +1,67 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "Mouse&Keyboard",
+            "id": "71660266-970b-437a-835a-bd65c60f5cc1",
+            "actions": [
+                {
+                    "name": "Main",
+                    "type": "Button",
+                    "id": "30c6b79c-3607-4fec-be41-2e02a88065f6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "94e43be0-c164-4d57-a3f6-bfac0a5a0c03",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Main",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "aaafe060-79e4-418b-ac96-9627e475b694",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Main",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "30249d44-1029-4d86-b70a-a3d035f30d5a",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Main",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "b03d2d91-e784-4e48-8777-c62b4eac4fd5",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Main",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
