@@ -24,6 +24,7 @@ public class Planting : MonoBehaviour
     public void Start()
     {
         currentPlantState = PlantStates.Ready;
+        playerController = FindObjectOfType<PlayerController>();
     }
     public void Update()
     {
@@ -133,6 +134,7 @@ public class Planting : MonoBehaviour
     }
     public void EnterGrowingState() 
     {
+        isPlanted = true;
         plantInstance.transform.localScale *= scaleFactor;
     }
 

@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPrefab: {fileID: 3132680643347791441, guid: 0a4244a83083319429580fd21140c937, type: 3}
-  text: Spoogy
+  text: Plant Seed?
+  planting: {fileID: 1486147882628915090}
   xOffset: 0
-  yOffset: 1
+  yOffset: -300
