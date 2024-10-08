@@ -38,6 +38,7 @@ namespace DefaultNamespace
             currentScale.x = Mathf.Lerp(initialScaleRight.x, initialScaleRight.x + Mathf.Abs(fogObjectRight
                .transform.position.x), t); //-85 & 85
             fogObjectLeft.transform.localScale = currentScale;
+            fogObjectRight.transform.localScale = currentScale;
             //fogObjectRight.transform.localScale = new Vector3(xScalerFloat, fogObjectRight.transform.localScale.y, 1);
             //fogObjectLeft.transform.localScale = new Vector3(xScalerFloat, fogObjectLeft.transform.localScale.y, 1); 
         }

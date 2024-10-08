@@ -1185,22 +1185,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FogRight
       objectReference: {fileID: 0}
-    - target: {fileID: 1450721904547195069, guid: c6dd9abe7118f874db3f7059826b9d76, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450721904547195069, guid: c6dd9abe7118f874db3f7059826b9d76, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1450721904547195069, guid: c6dd9abe7118f874db3f7059826b9d76, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484394561880522338, guid: c6dd9abe7118f874db3f7059826b9d76, type: 3}
-      propertyPath: m_BodyType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7306740805123597774, guid: c6dd9abe7118f874db3f7059826b9d76, type: 3}
       propertyPath: m_LocalScale.y
       value: 11
@@ -1244,6 +1228,18 @@ PrefabInstance:
     - target: {fileID: 7306740805123597774, guid: c6dd9abe7118f874db3f7059826b9d76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308692091692102300, guid: c6dd9abe7118f874db3f7059826b9d76, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308692091692102300, guid: c6dd9abe7118f874db3f7059826b9d76, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308692091692102300, guid: c6dd9abe7118f874db3f7059826b9d76, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1300,10 +1296,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1074095338633600894, guid: 8b1649b9c8ac2df41870434ac372a6fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3367455947480977740, guid: 8b1649b9c8ac2df41870434ac372a6fc, type: 3}
-      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050818014475199368, guid: 8b1649b9c8ac2df41870434ac372a6fc, type: 3}
