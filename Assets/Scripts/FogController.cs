@@ -2,14 +2,17 @@
 
 namespace DefaultNamespace
 {
+    //TODO large refactor
     public class FogController : MonoBehaviour
     {
         [SerializeField]
         private GameObject fogObjectLeft;
         [SerializeField]
         private GameObject fogObjectRight;
+        [Tooltip("Time in seconds for the fog to close in")]
         [SerializeField]
         private float duration = 180f; // Time for the fog to fully extend
+      
 
         private Vector3 initialScaleLeft;
         private Vector3 initialScaleRight;
