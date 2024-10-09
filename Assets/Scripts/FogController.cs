@@ -36,7 +36,7 @@ namespace DefaultNamespace
         {
             _time += Time.deltaTime;
             float t = Mathf.Clamp01(_time / duration);
-            print(_time+" is current time"+t+" proportion of time");
+            //print(_time+" is current time"+t+" proportion of time");
             Vector3 currentScale = fogObjectLeft.transform.localScale;
             currentScale.x = Mathf.Lerp(initialScaleRight.x, initialScaleRight.x + Mathf.Abs(fogObjectRight
                .transform.position.x), t); //-85 & 85
