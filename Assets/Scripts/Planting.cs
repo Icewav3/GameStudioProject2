@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlantStates {Ready, Plant1, Plant2, Plant3, Growing}
+public enum PlantStates {Ready, Plant1, Plant2, Plant3, Growing, Shrinking}
 
 public class Planting : MonoBehaviour
 {
@@ -12,7 +12,10 @@ public class Planting : MonoBehaviour
     public GameObject plantPrefab2;
     public GameObject plantPrefab3;
     public GameObject plantInstance;
-    public float scaleFactor = 1.0001f;
+    public float growFactor = 1.0001f;
+    public float shrinkFactor = 1.001f;
+    public float destroyPlantAtScale = 0.5f;
+    public float maxPlantScale = 2.5f;
 
     public float timer = 0.0f;
     public float plant1Time = 3.0f;
@@ -51,7 +54,11 @@ public class Planting : MonoBehaviour
                 case PlantStates.Growing:
                     EnterGrowingState();
                     break;
-            }
+                case PlantStates.Shrinking:
+                    EnterShrinkingState();
+                    break;
+
+        }
     }
 
     public void SetPlantState()
@@ -73,6 +80,16 @@ public class Planting : MonoBehaviour
             case PlantStates.Plant3:
                 currentPlantState = PlantStates.Growing;
                 break;
+
+            case PlantStates.Growing:
+                currentPlantState = PlantStates.Shrinking;
+                break;
+
+            case PlantStates.Shrinking:
+                currentPlantState = PlantStates.Ready;
+                break;
+
+
         }
         timer = 0.0f;
         isPlanted = false;
@@ -88,6 +105,18 @@ public class Planting : MonoBehaviour
                 SetPlantState();
             }
         }
+
+        if (collision.gameObject.CompareTag("Fog"))
+        {
+            if (currentPlantState == PlantStates.Growing)
+            {
+                SetPlantState();
+            }
+            else if(currentPlantState == PlantStates.Plant1 || currentPlantState == PlantStates.Plant2)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     public void EnterReadyState() 
@@ -98,7 +127,7 @@ public class Planting : MonoBehaviour
     {
         if (!isPlanted)
         {
-            plantInstance = Instantiate(plantPrefab1, transform.position, Quaternion.identity);
+            plantInstance = Instantiate(plantPrefab1, transform.position, Quaternion.identity, transform);
             isPlanted = true;
         }
         if(timer > plant1Time)
@@ -111,7 +140,7 @@ public class Planting : MonoBehaviour
         if (!isPlanted)
         {
             Destroy(plantInstance);
-            plantInstance = Instantiate(plantPrefab2, transform.position, Quaternion.identity);
+            plantInstance = Instantiate(plantPrefab2, transform.position, Quaternion.identity, transform);
             isPlanted = true;
         }
         if (timer > plant2Time)
@@ -124,7 +153,7 @@ public class Planting : MonoBehaviour
         if (!isPlanted)
         {
             Destroy(plantInstance);
-            plantInstance = Instantiate(plantPrefab3, transform.position, Quaternion.identity);
+            plantInstance = Instantiate(plantPrefab3, transform.position, Quaternion.identity, transform);
             isPlanted = true;
         }
         if (timer > plant3Time)
@@ -135,8 +164,20 @@ public class Planting : MonoBehaviour
     public void EnterGrowingState() 
     {
         isPlanted = true;
-        plantInstance.transform.localScale *= scaleFactor;
+        if (plantInstance.transform.localScale.y <= maxPlantScale)
+        {
+            plantInstance.transform.localScale *= growFactor;
+        }
     }
 
+    public void EnterShrinkingState()
+    {
+        plantInstance.transform.localScale /= shrinkFactor;
+        if(plantInstance.transform.localScale.y <= destroyPlantAtScale)
+        {
+            Destroy(plantInstance);
+            SetPlantState();
+        }
+    }
 
 }
