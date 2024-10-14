@@ -29,6 +29,14 @@ public class SimpleFogController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(fogObjectLeft.transform.position.x >= -42.5)
+        {
+            isBlockedLeft = true;
+        }
+        if(fogObjectRight.transform.position.x <= 42.5)
+        {
+            isBlockedRight = true;
+        }
         if (!isBlockedLeft)
         {
             fogObjectLeft.transform.position += distanceToEndPoint * Time.deltaTime / timeToTravel;
