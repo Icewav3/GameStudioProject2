@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float speed = 1;
-    private Rigidbody2D _rg;
-    private GameObject _playerArt;
-
+    //private Rigidbody2D _rg;
+    [SerializeField]
+    private GameObject _playerArtObject;
+    private SpriteRenderer _playerArt;
+    
     private PlayerInput playerControls;
     private InputAction move;
     private InputAction plant;
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerInput();
+        _playerArt = _playerArtObject.GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -35,15 +38,10 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnDisable()
+    private void OnDisable() //are we disabling player controller?
     {
         move.Disable();
         plant.Disable();
-    }
-    void Start()
-    {
-        //_rg = this.GetComponentInChildren<Rigidbody2D>();
-        //_playerArt = this.transform.Find("TankArt").gameObject;
     }
     /// <summary>
     /// Get player input
@@ -51,16 +49,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moveInput = move.ReadValue<float>();
-
         transform.position += new Vector3(moveInput, 0, 0) * (speed * Time.deltaTime);
+        _playerArt.flipX = moveInput < 0 ? true : false;
     }
 
-    public void OnPlantStarted(InputAction.CallbackContext context)
+    private void OnPlantStarted(InputAction.CallbackContext context)
     {
         plantWasPressed = true;
     }
 
-    public void OnPlantCancelled(InputAction.CallbackContext context)
+    private void OnPlantCancelled(InputAction.CallbackContext context)
     {
         plantWasPressed = false;
     }
