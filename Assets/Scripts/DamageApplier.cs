@@ -17,10 +17,10 @@ public class DamageApplier : MonoBehaviour
     /// </summary>
     void Start()
     {
-        if (targetTag == null)
+        /*if (targetTag == null)
         {
             Debug.LogWarning("Set target tag");
-        }
+        }*/
         _boxCollider = GetComponent<BoxCollider2D>();
         _endTime = Time.time + lifetime;
     }

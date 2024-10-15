@@ -17,16 +17,13 @@ public class BasicShooter : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Time.time >= nextFire)
         {
-            if (Time.time >= nextFire)
-            {
-                GameObject bullet = Instantiate(Projectile, transform.position, quaternion.identity);
-                shoot.Play();
-                var bulletRg = bullet.GetComponent<Rigidbody2D>();
-                bulletRg.AddForce(transform.up*_speed);
-                nextFire = Time.time + fireRate;
-            }
+            GameObject bullet = Instantiate(Projectile, transform.position, quaternion.identity);
+            //shoot.Play();
+            var bulletRg = bullet.GetComponent<Rigidbody2D>();
+            bulletRg.AddForce(transform.up*_speed);
+            nextFire = Time.time + fireRate;
         }
     }
 }
