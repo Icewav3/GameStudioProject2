@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8887588743380552569}
   m_Layer: 0
   m_Name: FogRight
-  m_TagString: Untagged
+  m_TagString: Fog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 85, y: 11, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1450721904547195069}
+  - {fileID: 869757021417888624}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3838434473624323504
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!1 &1910296661553587132
+--- !u!1 &8366990813790589638
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,22 +128,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1450721904547195069}
-  - component: {fileID: 4864347971438702778}
+  - component: {fileID: 869757021417888624}
+  - component: {fileID: 443866752097418132}
   m_Layer: 0
   m_Name: Art
-  m_TagString: Untagged
+  m_TagString: Fog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1450721904547195069
+--- !u!4 &869757021417888624
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910296661553587132}
+  m_GameObject: {fileID: 8366990813790589638}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -152,13 +152,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7306740805123597774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4864347971438702778
+--- !u!212 &443866752097418132
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910296661553587132}
+  m_GameObject: {fileID: 8366990813790589638}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -172,7 +172,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4729f8aaeb4a27840acc601483ee616d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -195,7 +195,7 @@ SpriteRenderer:
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 716d4195e64987c47947b53a2ee49826, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8.25, y: 8.25}

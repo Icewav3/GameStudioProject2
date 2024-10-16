@@ -13,8 +13,8 @@ namespace DefaultNamespace
         [SerializeField]
         private float duration = 180f; // Time for the fog to fully extend
 
-        private Vector3 initialScaleLeft;
-        private Vector3 initialScaleRight;
+        private Vector3 initialPosLeft;
+        private Vector3 initialPosRight;
         private float _endTime;
         private float _initialTime;
         private float _currentTime;
@@ -24,8 +24,8 @@ namespace DefaultNamespace
         private void Start()
         {
             // Save initial scales
-            initialScaleLeft = fogObjectLeft.transform.localScale;
-            initialScaleRight = fogObjectRight.transform.localScale;
+            initialPosLeft = fogObjectLeft.transform.position;
+            initialPosRight = fogObjectRight.transform.position;
             //_initialTime = Time.time;
             //_endTime = Time.time + duration;
             _fogCollider = fogObjectLeft.GetComponentInChildren<BoxCollider2D>();
@@ -33,16 +33,17 @@ namespace DefaultNamespace
 
         public void Update()
         {
+            UpdateFogPosition();
+        }
+
+        private void UpdateFogPosition()
+        {
             _time += Time.deltaTime;
             float t = Mathf.Clamp01(_time / duration);
-            //print(_time+" is current time"+t+" proportion of time");
-            Vector3 currentScale = fogObjectLeft.transform.localScale;
-            currentScale.x = Mathf.Lerp(initialScaleRight.x, initialScaleRight.x + Mathf.Abs(fogObjectRight
-               .transform.position.x), t); //-85 & 85
-            fogObjectLeft.transform.localScale = currentScale;
-            fogObjectRight.transform.localScale = currentScale;
-            //fogObjectRight.transform.localScale = new Vector3(xScalerFloat, fogObjectRight.transform.localScale.y, 1);
-            //fogObjectLeft.transform.localScale = new Vector3(xScalerFloat, fogObjectLeft.transform.localScale.y, 1); 
+            Vector3 currentPos = fogObjectLeft.transform.position;
+            float calculatedPos = Mathf.Lerp(initialPosLeft.x, initialPosLeft.x + Mathf.Abs(currentPos.x), t);
+            fogObjectLeft.transform.position = new Vector3(calculatedPos, fogObjectLeft.transform.position.y, 0);
+            fogObjectRight.transform.position = new Vector3(-calculatedPos, fogObjectRight.transform.position.y, 0);
         }
     }
 }
