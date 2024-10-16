@@ -14,11 +14,11 @@ public class Animation : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
-            animator.Play("CWalk");
+            animator.SetBool("IsMove", true);
         }
         else
         {
-            animator.Play("CIdle");
+            animator.SetBool("IsMove", false);
         }
     }
 }
