@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4392945848973593942}
   - component: {fileID: 8971858346949789862}
   - component: {fileID: 1486147882628915090}
-  - component: {fileID: 8684708313101679908}
+  - component: {fileID: 721250839024846525}
   - component: {fileID: -4308324611528332081}
   m_Layer: 0
   m_Name: Dirt Mound
@@ -175,15 +175,17 @@ MonoBehaviour:
   plantPrefab2: {fileID: 7197324680115023312, guid: b3ea0e48831a6d548947ad92c50a2980, type: 3}
   plantPrefab3: {fileID: 5512665107337129648, guid: b6798d27bf4c430458dff7de3294cce7, type: 3}
   plantInstance: {fileID: 0}
-  scaleFactor: 1.0001
+  growFactor: 1.0001
+  shrinkFactor: 1.001
   destroyPlantAtScale: 0.5
+  maxPlantScale: 2.5
   timer: 0
   plant1Time: 3
   plant2Time: 3
   plant3Time: 3
   isPlanted: 0
   playerController: {fileID: 0}
---- !u!114 &8684708313101679908
+--- !u!114 &721250839024846525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,14 +194,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8483464061350950413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a6009a86fcb5c46945a5af901ec92a, type: 3}
+  m_Script: {fileID: 11500000, guid: c8fe2caa80bbc534abeccad84b57cfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textPrefab: {fileID: 3132680643347791441, guid: 0a4244a83083319429580fd21140c937, type: 3}
-  text: Plant Seed?
-  planting: {fileID: 1486147882628915090}
-  xOffset: 0
-  yOffset: -300
+  messageToShow: Plant Seed?
 --- !u!50 &-4308324611528332081
 Rigidbody2D:
   serializedVersion: 4
