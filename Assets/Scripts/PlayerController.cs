@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerControls;
     private InputAction move;
     private InputAction plant;
-    private float moveInput;
+    public float moveInput;
     public bool plantWasPressed;
 
 
