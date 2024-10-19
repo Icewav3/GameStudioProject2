@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc1be205bf04ebe932d7e4c2fafd100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 3835267248529276483, guid: 30fd5dad7c901ba478969ea0abae06a5, type: 3}
-  _verticalOffset: 0.5
+  projectile: {fileID: 3835267248529276483, guid: 30fd5dad7c901ba478969ea0abae06a5, type: 3}
+  verticalOffset: 0.5
   fireRate: 0.3
 --- !u!1 &7191378310023238912
 GameObject:

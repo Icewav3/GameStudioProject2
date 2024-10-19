@@ -2,48 +2,50 @@
 
 namespace DefaultNamespace
 {
-    //TODO large refactor
     public class FogController : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject fogObjectLeft;
-        [SerializeField]
-        private GameObject fogObjectRight;
+
         [Tooltip("Time in seconds for the fog to close in")]
         [SerializeField]
         private float duration = 180f; // Time for the fog to fully extend
-
-        private Vector3 initialPosLeft;
-        private Vector3 initialPosRight;
+        [SerializeField]
+        private bool flipX;
+        private Vector3 _initialPos;
         private float _endTime;
         private float _initialTime;
         private float _currentTime;
         private float _time;
+        private GameObject fogObject;
+        public bool IsPaused { get; set; } = false;
         private BoxCollider2D _fogCollider;
 
-        private void Start()
+        private void Awake()
         {
-            // Save initial scales
-            initialPosLeft = fogObjectLeft.transform.position;
-            initialPosRight = fogObjectRight.transform.position;
-            //_initialTime = Time.time;
-            //_endTime = Time.time + duration;
-            _fogCollider = fogObjectLeft.GetComponentInChildren<BoxCollider2D>();
+            fogObject = this.gameObject;
+            _initialPos = fogObject.transform.position;
+            _fogCollider = fogObject.GetComponentInChildren<BoxCollider2D>();
         }
 
         public void Update()
         {
-            UpdateFogPosition();
+            if(!IsPaused)
+            {
+                UpdateFogPosition();
+            }
         }
 
+        /// <summary>
+        /// Updates the position of the fog object over time, causing it to gradually move.
+        /// The movement is influenced by the specified duration and the current time.
+        /// Depending on the flipX setting, the fog can move in the positive or negative direction along the x-axis.
+        /// </summary>
         private void UpdateFogPosition()
         {
             _time += Time.deltaTime;
             float t = Mathf.Clamp01(_time / duration);
-            Vector3 currentPos = fogObjectLeft.transform.position;
-            float calculatedPos = Mathf.Lerp(initialPosLeft.x, initialPosLeft.x + Mathf.Abs(currentPos.x), t);
-            fogObjectLeft.transform.position = new Vector3(calculatedPos, fogObjectLeft.transform.position.y, 0);
-            fogObjectRight.transform.position = new Vector3(-calculatedPos, fogObjectRight.transform.position.y, 0);
+            Vector3 currentPos = fogObject.transform.position;
+            float calculatedPos = Mathf.Lerp(_initialPos.x, _initialPos.x + (flipX ? -1 : 1) * -Mathf.Abs(currentPos.x), t);
+            fogObject.transform.position = new Vector3(calculatedPos, fogObject.transform.position.y, 0);
         }
     }
 }
