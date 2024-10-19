@@ -10,16 +10,15 @@ public class Damageable : MonoBehaviour
     private float health; // Current health.
 
     // Events triggered on health change and death.
-    public UnityEvent onHealthChanged;
-    public UnityEvent onDeath;
+    public UnityEvent onHealthChanged = new UnityEvent();
+    public UnityEvent onDeath = new UnityEvent();
 
-    private GameObject healthBarObject; // Health bar game object.
-    private Image healthBar; // Health bar image component.
+    //private GameObject healthBarObject; // Health bar game object.
+    //private Image healthBar; // Health bar image component.
 
     public void Start()
     {
-        healthBarObject = GameObject.FindGameObjectWithTag("HealthSystem");
-        healthBar = healthBarObject.GetComponent<Image>();
+        //healthBar = healthBarObject.GetComponent<Image>();
         health = Maxhealth;
     }
 
@@ -27,7 +26,7 @@ public class Damageable : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        healthBar.fillAmount = health / Maxhealth;
+       //healthBar.fillAmount = health / Maxhealth;
         onHealthChanged?.Invoke();
 
         if (health <= 0)
