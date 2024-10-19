@@ -49,6 +49,7 @@ public class DamageApplier : MonoBehaviour
             if (damageable != null)
             {
                 damageable.TakeDamage(damage);
+                Destroy(this.gameObject);
             }
         }
     }
