@@ -15,9 +15,13 @@ public class PlayerController : MonoBehaviour
     
     private PlayerInput playerControls;
     private InputAction move;
-    private InputAction plant;
+    private InputAction plant1;
+    private InputAction plant2;
+    private InputAction plant3;
     public float moveInput;
-    public bool plantWasPressed;
+    public bool plant1WasPressed;
+    public bool plant2WasPressed;
+    public bool plant3WasPressed;
 
 
     private void Awake()
@@ -30,18 +34,29 @@ public class PlayerController : MonoBehaviour
     {
         move = playerControls.MouseKeyboard.Move;
         move.Enable();
-        plant = playerControls.MouseKeyboard.Plant;
-        plant.Enable();
+        plant1 = playerControls.MouseKeyboard.Plant1;
+        plant1.Enable();
+        plant1.started += OnPlant1Started;
+        plant1.canceled += OnPlant1Cancelled;
 
-        plant.started += OnPlantStarted;
-        plant.canceled += OnPlantCancelled;
-        
+        plant2 = playerControls.MouseKeyboard.Plant2;
+        plant2.Enable();
+        plant2.started += OnPlant2Started;
+        plant2.canceled += OnPlant2Cancelled;
+
+        plant3 = playerControls.MouseKeyboard.Plant3;
+        plant3.Enable();
+        plant3.started += OnPlant3Started;
+        plant3.canceled += OnPlant3Cancelled;
+
     }
 
     private void OnDisable() //are we disabling player controller?
     {
         move.Disable();
-        plant.Disable();
+        plant1.Disable();
+        plant2.Disable();
+        plant3.Disable();
     }
     /// <summary>
     /// Get player input
@@ -53,13 +68,36 @@ public class PlayerController : MonoBehaviour
         _playerArt.flipX = moveInput < 0 ? true : false;
     }
 
-    private void OnPlantStarted(InputAction.CallbackContext context)
+    private void OnPlant1Started(InputAction.CallbackContext context)
     {
-        plantWasPressed = true;
+        plant1WasPressed = true;
+
     }
 
-    private void OnPlantCancelled(InputAction.CallbackContext context)
+    private void OnPlant1Cancelled(InputAction.CallbackContext context)
     {
-        plantWasPressed = false;
+        plant1WasPressed = false;
+    }
+
+    private void OnPlant2Started(InputAction.CallbackContext context)
+    {
+        plant2WasPressed = true;
+
+    }
+
+    private void OnPlant2Cancelled(InputAction.CallbackContext context)
+    {
+        plant2WasPressed = false;
+    }
+
+    private void OnPlant3Started(InputAction.CallbackContext context)
+    {
+        plant3WasPressed = true;
+
+    }
+
+    private void OnPlant3Cancelled(InputAction.CallbackContext context)
+    {
+        plant3WasPressed = false;
     }
 }
