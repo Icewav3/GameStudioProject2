@@ -44,6 +44,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""4340ea5e-354b-4481-99d0-e4bed6ef3005"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -90,6 +99,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Plant"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9dd1454b-e67e-4c94-bfbe-0dfe7be1d049"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -100,6 +120,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_MouseKeyboard = asset.FindActionMap("Mouse&Keyboard", throwIfNotFound: true);
         m_MouseKeyboard_Move = m_MouseKeyboard.FindAction("Move", throwIfNotFound: true);
         m_MouseKeyboard_Plant = m_MouseKeyboard.FindAction("Plant", throwIfNotFound: true);
+        m_MouseKeyboard_Pause = m_MouseKeyboard.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,12 +184,14 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private List<IMouseKeyboardActions> m_MouseKeyboardActionsCallbackInterfaces = new List<IMouseKeyboardActions>();
     private readonly InputAction m_MouseKeyboard_Move;
     private readonly InputAction m_MouseKeyboard_Plant;
+    private readonly InputAction m_MouseKeyboard_Pause;
     public struct MouseKeyboardActions
     {
         private @PlayerInput m_Wrapper;
         public MouseKeyboardActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_MouseKeyboard_Move;
         public InputAction @Plant => m_Wrapper.m_MouseKeyboard_Plant;
+        public InputAction @Pause => m_Wrapper.m_MouseKeyboard_Pause;
         public InputActionMap Get() { return m_Wrapper.m_MouseKeyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -184,6 +207,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Plant.started += instance.OnPlant;
             @Plant.performed += instance.OnPlant;
             @Plant.canceled += instance.OnPlant;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IMouseKeyboardActions instance)
@@ -194,6 +220,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Plant.started -= instance.OnPlant;
             @Plant.performed -= instance.OnPlant;
             @Plant.canceled -= instance.OnPlant;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IMouseKeyboardActions instance)
@@ -215,5 +244,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnPlant(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

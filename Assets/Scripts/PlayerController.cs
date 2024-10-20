@@ -16,8 +16,12 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerControls;
     private InputAction move;
     private InputAction plant;
+    private InputAction pause;
     public float moveInput;
     public bool plantWasPressed;
+
+    public SceneStateManager sceneSM;
+    public UIManager UIManager;
 
 
     private void Awake()
@@ -32,9 +36,12 @@ public class PlayerController : MonoBehaviour
         move.Enable();
         plant = playerControls.MouseKeyboard.Plant;
         plant.Enable();
+        pause = playerControls.MouseKeyboard.Pause;
+        pause.Enable();
 
         plant.started += OnPlantStarted;
         plant.canceled += OnPlantCancelled;
+        pause.performed += OnPausePerformed;
         
     }
 
@@ -42,16 +49,23 @@ public class PlayerController : MonoBehaviour
     {
         move.Disable();
         plant.Disable();
+        pause.Disable();
     }
     /// <summary>
     /// Get player input
     /// </summary>
     void Update()
     {
-        moveInput = move.ReadValue<float>();
-        transform.position += new Vector3(moveInput, 0, 0) * (speed * Time.deltaTime);
-        _playerArt.flipX = moveInput < 0 ? true : false;
+        if (!SceneStateManager.gameIsPaused)
+        {
+            moveInput = move.ReadValue<float>();
+            transform.position += new Vector3(moveInput, 0, 0) * (speed * Time.deltaTime);
+            _playerArt.flipX = moveInput < 0 ? true : false;
+        }
+
     }
+
+
 
     private void OnPlantStarted(InputAction.CallbackContext context)
     {
@@ -61,5 +75,19 @@ public class PlayerController : MonoBehaviour
     private void OnPlantCancelled(InputAction.CallbackContext context)
     {
         plantWasPressed = false;
+    }
+
+    private void OnPausePerformed(InputAction.CallbackContext context)
+    {
+        if (!SceneStateManager.gameIsPaused)
+        {
+            sceneSM.PauseGame();
+            UIManager.LoadPauseUI();
+        }
+        else
+        {
+            sceneSM.ResumeGame();
+            UIManager.LoadGameUI();
+        }
     }
 }
