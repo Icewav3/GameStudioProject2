@@ -103,10 +103,10 @@ public class Planting : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (!isPlanted)
-            if (currentPlantState == PlantStates.Ready && playerController.plantWasPressed)
+            //if (currentPlantState == PlantStates.Ready && playerController.plantWasPressed)
             {
                 isPlanted = true;
-                playerController.plantWasPressed = false;
+                //playerController.plantWasPressed = false;
                 SetPlantState();
             }
 
