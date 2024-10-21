@@ -14,14 +14,14 @@ namespace DefaultNamespace
         [Tooltip("Initial maximum prefabs per wave")] [SerializeField]
         private int initialMaxPrefabsPerWave = 5;
 
-        [Tooltip("time between waves in seconds")] [SerializeField]
-        private float initialMinSpawnInterval = 15f;
-
         [Tooltip("Multiplies all spawns")] [SerializeField]
         private float difficultyMultiplier = 1.1f;
 
         [Tooltip("In seconds")] [SerializeField]
         private float waveCooldown = 1f;
+        
+        [Tooltip("enemies added per wave")] [SerializeField]
+        private int enemiesPerWave = 1;
 
         [Tooltip("Initial delay before starting spawning (seconds)")] [SerializeField]
         private float initialWaveDelay = 60f;
@@ -72,7 +72,7 @@ namespace DefaultNamespace
             while (isSpawning)
             {
                 currentWave++;
-                int prefabsToSpawn = Random.Range(minPrefabsPerWave, maxPrefabsPerWave) + currentWave;
+                int prefabsToSpawn = Random.Range(minPrefabsPerWave, maxPrefabsPerWave) + currentWave * enemiesPerWave;
                 for (int i = 0; i < prefabsToSpawn; i++)
                 {
                     SpawnPrefab();
