@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnDisable() //are we disabling player controller?
+    private void OnDisable()
     {
         move.Disable();
 
