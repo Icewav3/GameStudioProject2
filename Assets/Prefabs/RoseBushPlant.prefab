@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 1733553066804009451}
   m_Layer: 8
   m_Name: Shooter
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 6544150344600381983}
   m_Layer: 8
   m_Name: RoseBushArt
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

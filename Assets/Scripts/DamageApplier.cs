@@ -45,7 +45,7 @@ public class DamageApplier : MonoBehaviour
         print("OH GOD");
         if (targetTag == null || other.gameObject.CompareTag(targetTag))
         {
-            Damageable damageable = other.gameObject.GetComponent<Damageable>();
+            Damageable damageable = other.gameObject.GetComponentInChildren<Damageable>();
             print("we doin stuff");
             if (damageable != null)
             {
