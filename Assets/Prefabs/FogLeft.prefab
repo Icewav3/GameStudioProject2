@@ -254,7 +254,7 @@ MonoBehaviour:
   - {fileID: 4203751473430253657, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
   initialMinPrefabsPerWave: 1
   initialMaxPrefabsPerWave: 5
-  initialMinSpawnInterval: 2
-  initialMaxSpawnInterval: 5
   difficultyMultiplier: 1.1
-  waveCooldown: 5
+  waveCooldown: 0
+  enemiesPerWave: 1
+  initialWaveDelay: 0

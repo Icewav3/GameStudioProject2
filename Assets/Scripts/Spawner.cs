@@ -8,23 +8,23 @@ namespace DefaultNamespace
         [Header("Spawn Settings")] [Tooltip("Array of prefabs to spawn")] [SerializeField]
         private GameObject[] prefabs; // Array of prefabs to spawn
 
-        [Tooltip("Initial minimum prefabs per wave")] [SerializeField]
+        [Tooltip("Initial minimum prefabs per wave")]
         private int initialMinPrefabsPerWave = 1;
 
-        [Tooltip("Initial maximum prefabs per wave")] [SerializeField]
-        private int initialMaxPrefabsPerWave = 5;
+        [Tooltip("Initial maximum prefabs per wave")]
+        private int initialMaxPrefabsPerWave = 3;
 
-        [Tooltip("Multiplies all spawns")] [SerializeField]
+        [Tooltip("Multiplies all spawns")]
         private float difficultyMultiplier = 1.1f;
 
-        [Tooltip("In seconds")] [SerializeField]
-        private float waveCooldown = 1f;
+        [Tooltip("In seconds")]
+        private float waveCooldown = 15f;
         
-        [Tooltip("enemies added per wave")] [SerializeField]
+        [Tooltip("enemies added per wave")]
         private int enemiesPerWave = 1;
 
-        [Tooltip("Initial delay before starting spawning (seconds)")] [SerializeField]
-        private float initialWaveDelay = 60f;
+        [Tooltip("Initial delay before starting spawning (seconds)")] 
+        private float initialWaveDelay = 30f;
 
         private int currentWave = 0; // Current wave counter
         private bool isSpawning = false;

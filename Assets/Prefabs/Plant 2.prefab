@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5770836555209549726}
   - component: {fileID: 7011632057345422624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plant 2
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1347032644471236587}
   - component: {fileID: 3123106809754047832}
   - component: {fileID: 2930151748228430076}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

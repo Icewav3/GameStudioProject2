@@ -28,7 +28,7 @@ public class Damageable : MonoBehaviour
         health -= damage;
        //healthBar.fillAmount = health / Maxhealth;
         onHealthChanged?.Invoke();
-        print("damage taken");
+        print("damage taken"+gameObject.name);
 
         if (health <= 0)
         {

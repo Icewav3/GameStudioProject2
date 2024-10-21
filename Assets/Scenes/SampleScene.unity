@@ -3193,64 +3193,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1808224423931456211, guid: ba03681769a998e4ca579adacf1166ad, type: 3}
   m_PrefabInstance: {fileID: 1143355693}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &656441689
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1990939391405025281, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_Name
-      value: RoseBushPlant (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.375099
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.4016714
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7191378310023238912, guid: fb960efdf150ce0428e854489905218d, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fb960efdf150ce0428e854489905218d, type: 3}
 --- !u!4 &665377894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1808224423931456211, guid: ba03681769a998e4ca579adacf1166ad, type: 3}
@@ -3946,67 +3888,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1808224423931456211, guid: ba03681769a998e4ca579adacf1166ad, type: 3}
   m_PrefabInstance: {fileID: 596726626}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &932941683
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1990939391405025281, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_Name
-      value: RoseBushPlant
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.771957
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544150344600381983, guid: fb960efdf150ce0428e854489905218d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fb960efdf150ce0428e854489905218d, type: 3}
 --- !u!1 &936709022
 GameObject:
   m_ObjectHideFlags: 0
@@ -6589,7 +6470,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15693164, y: 1.415}
+  m_Offset: {x: 0.06, y: 1.23}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.49289775, y: -0.01831502}
@@ -6600,7 +6481,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.686135, y: 3}
+  m_Size: {x: 3.42, y: 2.38}
   m_EdgeRadius: 0
 --- !u!1 &1510627104
 GameObject:
@@ -11534,7 +11415,5 @@ SceneRoots:
   - {fileID: 338155801}
   - {fileID: 115552180}
   - {fileID: 433811770}
-  - {fileID: 932941683}
   - {fileID: 320304326}
   - {fileID: 1399240351}
-  - {fileID: 656441689}

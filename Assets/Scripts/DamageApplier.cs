@@ -42,10 +42,11 @@ public class DamageApplier : MonoBehaviour
     /// <param name="other">The collision information of the other collider.</param>
     private void OnCollisionEnter2D(Collision2D other)
     {
+        print("OH GOD");
         if (targetTag == null || other.gameObject.CompareTag(targetTag))
         {
             Damageable damageable = other.gameObject.GetComponent<Damageable>();
-
+            print("we doin stuff");
             if (damageable != null)
             {
                 damageable.TakeDamage(damage);

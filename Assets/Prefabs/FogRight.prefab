@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3838434473624323504}
   - component: {fileID: 8887588743380552569}
   - component: {fileID: 3054551609179308240}
-  - component: {fileID: 7014352685252733960}
   m_Layer: 0
   m_Name: FogRight
   m_TagString: Fog
@@ -123,26 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 180
   flipX: 0
---- !u!114 &7014352685252733960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992913261523568394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78223eb339334255a439199eb4e69843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 4203751473430253657, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
-  initialMinPrefabsPerWave: 1
-  initialMaxPrefabsPerWave: 5
-  initialMinSpawnInterval: 2
-  initialMaxSpawnInterval: 5
-  difficultyMultiplier: 1.1
-  waveCooldown: 5
 --- !u!1 &1139534823128467000
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,10 +170,10 @@ MonoBehaviour:
   - {fileID: 4203751473430253657, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
   initialMinPrefabsPerWave: 1
   initialMaxPrefabsPerWave: 5
-  initialMinSpawnInterval: 2
-  initialMaxSpawnInterval: 5
   difficultyMultiplier: 1.1
-  waveCooldown: 5
+  waveCooldown: 0
+  enemiesPerWave: 1
+  initialWaveDelay: 0
 --- !u!1 &8366990813790589638
 GameObject:
   m_ObjectHideFlags: 0
