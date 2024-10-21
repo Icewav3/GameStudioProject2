@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4792586348994579155}
   - component: {fileID: 1420716324219670590}
   - component: {fileID: 346891665129382864}
-  m_Layer: 0
+  - component: {fileID: -855688857065663942}
+  m_Layer: 8
   m_Name: RoseBushPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +100,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &-855688857065663942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990939391405025281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80bdd52343139c41b459f74fa4708f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canGrow: 0
+  canShrink: 0
+  growFactor: 1.0001
+  shrinkFactor: 1.001
+  maxPlantScale: 2
 --- !u!1 &2057769379763232068
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9035085330978279619}
   - component: {fileID: 1733553066804009451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6798393899222749835}
   - component: {fileID: 6544150344600381983}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoseBushArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
