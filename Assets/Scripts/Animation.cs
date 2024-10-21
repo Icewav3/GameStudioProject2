@@ -12,13 +12,16 @@ public class Animation : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        if (!SceneStateManager.gameIsPaused)
         {
-            animator.SetBool("IsMove", true);
-        }
-        else
-        {
-            animator.SetBool("IsMove", false);
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+            {
+                animator.SetBool("IsMove", true);
+            }
+            else
+            {
+                animator.SetBool("IsMove", false);
+            }
         }
     }
 }

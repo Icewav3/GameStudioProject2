@@ -18,7 +18,7 @@ public class DisplayName : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GameObject.Find("Canvas");
+        canvas = GameObject.Find("UI Canvas");
         textInstance = Instantiate(textPrefab, canvas.transform);
         textInstance.SetActive(false);
         textToDisplay = textInstance.GetComponent<TMP_Text>();
