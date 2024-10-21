@@ -125,15 +125,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnPausePerformed(InputAction.CallbackContext context)
     {
-        if (!SceneStateManager.gameIsPaused)
+        if (!SceneStateManager.playerLost)
         {
-            sceneSM.PauseGame();
-            UIManager.LoadPauseUI();
-        }
-        else
-        {
-            sceneSM.ResumeGame();
-            UIManager.LoadGameUI();
+            if (!SceneStateManager.gameIsPaused)
+            {
+                sceneSM.PauseGame();
+                UIManager.LoadPauseUI();
+            }
+            else
+            {
+                sceneSM.ResumeGame();
+                UIManager.LoadGameUI();
+            }
         }
     }
 }

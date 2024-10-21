@@ -10,6 +10,7 @@ public class TimerController : MonoBehaviour
     [SerializeField]
     private float countdownDuration = 180f;
     private float timeRemaining;
+    public UIManager uiManager;
 
     // Start is called before the first frame update
     void Start()
@@ -30,17 +31,25 @@ public class TimerController : MonoBehaviour
         else
         {
             timeRemaining = 0;
+            uiManager.LoadWinUI();
         }
 
     }
 
     public void UpdateTimerDisplay()
     {
-        int minutes = Mathf.FloorToInt(timeRemaining / 60);
-        int seconds = Mathf.FloorToInt(timeRemaining % 60);
+        if (timeRemaining > 0)
+        {
+            int minutes = Mathf.FloorToInt(timeRemaining / 60);
+            int seconds = Mathf.FloorToInt(timeRemaining % 60);
 
-        string timeToString = string.Format("{0:D1}:{1:D2}", minutes, seconds);
-        timerDisplay.text = timeToString;
+            string timeToString = string.Format("{0:D1}:{1:D2}", minutes, seconds);
+            timerDisplay.text = timeToString;
+        }
+        else
+        {
+            timerDisplay.text = "0:00";
+        }
 
     }
 }
