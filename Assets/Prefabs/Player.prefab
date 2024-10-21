@@ -304,7 +304,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &8732919715703117250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +319,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   _playerArtObject: {fileID: 676442192134000166}
-  plantWasPressed: 0
+  moveInput: 0
+  plant1WasPressed: 0
+  plant2WasPressed: 0
+  plant3WasPressed: 0
+  sceneSM: {fileID: 0}
+  UIManager: {fileID: 0}
 --- !u!114 &6935350145948778022
 MonoBehaviour:
   m_ObjectHideFlags: 0
