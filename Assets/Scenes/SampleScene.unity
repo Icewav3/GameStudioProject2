@@ -2442,7 +2442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerDisplay: {fileID: 130208932}
   countdownDuration: 180
-  uiManager: {fileID: 115552182}
+  uiManager: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,7 +2899,7 @@ Transform:
   - {fileID: 1022864595}
   m_Father: {fileID: 520837620}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &665600020
+--- !u!1001 &609971582
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2909,11 +2909,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4090728049600155468, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.9
+      value: -0.39112997
       objectReference: {fileID: 0}
     - target: {fileID: 4090728049600155468, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: 12.298604
       objectReference: {fileID: 0}
     - target: {fileID: 4090728049600155468, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2949,15 +2949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4203751473430253657, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
       propertyPath: m_Name
-      value: EnemyShadow (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769448794684668783, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
-      propertyPath: onHealthChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769448794684668783, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
-      propertyPath: onHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
+      value: EnemyShadow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9884,6 +9876,6 @@ SceneRoots:
   - {fileID: 2123485009}
   - {fileID: 1143355693}
   - {fileID: 1757476718}
-  - {fileID: 665600020}
   - {fileID: 932941683}
   - {fileID: 320304326}
+  - {fileID: 609971582}
