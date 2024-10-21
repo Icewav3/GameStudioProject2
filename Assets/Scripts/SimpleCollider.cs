@@ -15,7 +15,7 @@ public class SimpleCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Fog"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             sceneStateManager.PauseGame();
             uiManager.LoadLoseUI();

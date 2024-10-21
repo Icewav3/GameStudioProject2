@@ -11,7 +11,7 @@ public class BuildFunctionality : MonoBehaviour
         //close app on build
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            QuitGame();
         }
         //reload scene
         if (Input.GetKeyDown(KeyCode.R))
@@ -19,5 +19,10 @@ public class BuildFunctionality : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager
                 .GetActiveScene().name);
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
