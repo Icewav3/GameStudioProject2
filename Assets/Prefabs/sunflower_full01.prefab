@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1726446545831602820}
   - component: {fileID: 6458900170788179675}
   - component: {fileID: 3804139428686832304}
-  m_Layer: 0
+  - component: {fileID: -1526485051201323109}
+  m_Layer: 8
   m_Name: sunflower_full01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,3 +107,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1526485051201323109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736934444833528951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80bdd52343139c41b459f74fa4708f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canGrow: 0
+  canShrink: 0
+  growFactor: 1.0001
+  shrinkFactor: 1.001
+  maxPlantScale: 2

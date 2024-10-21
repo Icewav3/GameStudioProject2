@@ -3193,6 +3193,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1808224423931456211, guid: ba03681769a998e4ca579adacf1166ad, type: 3}
   m_PrefabInstance: {fileID: 1143355693}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &656441689
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1990939391405025281, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_Name
+      value: RoseBushPlant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.375099
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.4016714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792586348994579155, guid: fb960efdf150ce0428e854489905218d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 7191378310023238912, guid: fb960efdf150ce0428e854489905218d, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb960efdf150ce0428e854489905218d, type: 3}
 --- !u!4 &665377894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1808224423931456211, guid: ba03681769a998e4ca579adacf1166ad, type: 3}
@@ -11479,3 +11537,4 @@ SceneRoots:
   - {fileID: 932941683}
   - {fileID: 320304326}
   - {fileID: 1399240351}
+  - {fileID: 656441689}
