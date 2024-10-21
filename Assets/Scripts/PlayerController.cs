@@ -15,13 +15,21 @@ public class PlayerController : MonoBehaviour
     
     private PlayerInput playerControls;
     private InputAction move;
+
+    private InputAction plant;
+    private InputAction pause;
+
     private InputAction plant1;
     private InputAction plant2;
     private InputAction plant3;
+
     public float moveInput;
     public bool plant1WasPressed;
     public bool plant2WasPressed;
     public bool plant3WasPressed;
+
+    public SceneStateManager sceneSM;
+    public UIManager UIManager;
 
 
     private void Awake()
@@ -34,6 +42,11 @@ public class PlayerController : MonoBehaviour
     {
         move = playerControls.MouseKeyboard.Move;
         move.Enable();
+
+        pause = playerControls.MouseKeyboard.Pause;
+        pause.Enable();
+        pause.performed += OnPausePerformed;
+        
         plant1 = playerControls.MouseKeyboard.Plant1;
         plant1.Enable();
         plant1.started += OnPlant1Started;
@@ -54,21 +67,30 @@ public class PlayerController : MonoBehaviour
     private void OnDisable() //are we disabling player controller?
     {
         move.Disable();
+
+        pause.Disable();
+
         plant1.Disable();
         plant2.Disable();
         plant3.Disable();
+
     }
     /// <summary>
     /// Get player input
     /// </summary>
     void Update()
     {
-        moveInput = move.ReadValue<float>();
-        transform.position += new Vector3(moveInput, 0, 0) * (speed * Time.deltaTime);
-        _playerArt.flipX = moveInput < 0 ? true : false;
+        if (!SceneStateManager.gameIsPaused)
+        {
+            moveInput = move.ReadValue<float>();
+            transform.position += new Vector3(moveInput, 0, 0) * (speed * Time.deltaTime);
+            _playerArt.flipX = moveInput < 0 ? true : false;
+        }
+
     }
 
     private void OnPlant1Started(InputAction.CallbackContext context)
+
     {
         plant1WasPressed = true;
 
@@ -99,5 +121,19 @@ public class PlayerController : MonoBehaviour
     private void OnPlant3Cancelled(InputAction.CallbackContext context)
     {
         plant3WasPressed = false;
+    }
+
+    private void OnPausePerformed(InputAction.CallbackContext context)
+    {
+        if (!SceneStateManager.gameIsPaused)
+        {
+            sceneSM.PauseGame();
+            UIManager.LoadPauseUI();
+        }
+        else
+        {
+            sceneSM.ResumeGame();
+            UIManager.LoadGameUI();
+        }
     }
 }
