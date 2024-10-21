@@ -37,7 +37,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Plant"",
+                    ""name"": ""Plant1"",
                     ""type"": ""Value"",
                     ""id"": ""5c70d09d-7365-4e48-85df-c3483e95a7b3"",
                     ""expectedControlType"": ""Button"",
@@ -53,6 +53,24 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Plant2"",
+                    ""type"": ""Value"",
+                    ""id"": ""7f441274-aceb-4731-b878-6651f541431b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Plant3"",
+                    ""type"": ""Value"",
+                    ""id"": ""42892bf0-043c-4e6f-88a5-ccc14751028d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -92,11 +110,33 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d76f7bf1-1068-492a-8163-f194c2a2c82b"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Plant"",
+                    ""action"": ""Plant1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02239e26-7572-44a5-a401-877ebe5387fc"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Plant2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c19fb31-c6a7-4e15-bd5e-2470ec46ba8d"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Plant3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -119,8 +159,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Mouse&Keyboard
         m_MouseKeyboard = asset.FindActionMap("Mouse&Keyboard", throwIfNotFound: true);
         m_MouseKeyboard_Move = m_MouseKeyboard.FindAction("Move", throwIfNotFound: true);
-        m_MouseKeyboard_Plant = m_MouseKeyboard.FindAction("Plant", throwIfNotFound: true);
+
         m_MouseKeyboard_Pause = m_MouseKeyboard.FindAction("Pause", throwIfNotFound: true);
+
+        m_MouseKeyboard_Plant1 = m_MouseKeyboard.FindAction("Plant1", throwIfNotFound: true);
+        m_MouseKeyboard_Plant2 = m_MouseKeyboard.FindAction("Plant2", throwIfNotFound: true);
+        m_MouseKeyboard_Plant3 = m_MouseKeyboard.FindAction("Plant3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -183,15 +227,25 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_MouseKeyboard;
     private List<IMouseKeyboardActions> m_MouseKeyboardActionsCallbackInterfaces = new List<IMouseKeyboardActions>();
     private readonly InputAction m_MouseKeyboard_Move;
-    private readonly InputAction m_MouseKeyboard_Plant;
+
     private readonly InputAction m_MouseKeyboard_Pause;
+
+    private readonly InputAction m_MouseKeyboard_Plant1;
+    private readonly InputAction m_MouseKeyboard_Plant2;
+    private readonly InputAction m_MouseKeyboard_Plant3;
+
     public struct MouseKeyboardActions
     {
         private @PlayerInput m_Wrapper;
         public MouseKeyboardActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_MouseKeyboard_Move;
-        public InputAction @Plant => m_Wrapper.m_MouseKeyboard_Plant;
+
         public InputAction @Pause => m_Wrapper.m_MouseKeyboard_Pause;
+
+        public InputAction @Plant1 => m_Wrapper.m_MouseKeyboard_Plant1;
+        public InputAction @Plant2 => m_Wrapper.m_MouseKeyboard_Plant2;
+        public InputAction @Plant3 => m_Wrapper.m_MouseKeyboard_Plant3;
+
         public InputActionMap Get() { return m_Wrapper.m_MouseKeyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -204,12 +258,20 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Plant.started += instance.OnPlant;
-            @Plant.performed += instance.OnPlant;
-            @Plant.canceled += instance.OnPlant;
+
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+
+            @Plant1.started += instance.OnPlant1;
+            @Plant1.performed += instance.OnPlant1;
+            @Plant1.canceled += instance.OnPlant1;
+            @Plant2.started += instance.OnPlant2;
+            @Plant2.performed += instance.OnPlant2;
+            @Plant2.canceled += instance.OnPlant2;
+            @Plant3.started += instance.OnPlant3;
+            @Plant3.performed += instance.OnPlant3;
+            @Plant3.canceled += instance.OnPlant3;
         }
 
         private void UnregisterCallbacks(IMouseKeyboardActions instance)
@@ -217,12 +279,21 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Plant.started -= instance.OnPlant;
-            @Plant.performed -= instance.OnPlant;
-            @Plant.canceled -= instance.OnPlant;
+
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+
+            @Plant1.started -= instance.OnPlant1;
+            @Plant1.performed -= instance.OnPlant1;
+            @Plant1.canceled -= instance.OnPlant1;
+            @Plant2.started -= instance.OnPlant2;
+            @Plant2.performed -= instance.OnPlant2;
+            @Plant2.canceled -= instance.OnPlant2;
+            @Plant3.started -= instance.OnPlant3;
+            @Plant3.performed -= instance.OnPlant3;
+            @Plant3.canceled -= instance.OnPlant3;
+
         }
 
         public void RemoveCallbacks(IMouseKeyboardActions instance)
@@ -243,7 +314,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface IMouseKeyboardActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnPlant(InputAction.CallbackContext context);
+
         void OnPause(InputAction.CallbackContext context);
+
+        void OnPlant1(InputAction.CallbackContext context);
+        void OnPlant2(InputAction.CallbackContext context);
+        void OnPlant3(InputAction.CallbackContext context);
+
     }
 }

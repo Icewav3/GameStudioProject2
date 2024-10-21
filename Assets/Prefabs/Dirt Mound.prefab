@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 1808224423931456211}
   - component: {fileID: 4392945848973593942}
   - component: {fileID: 8971858346949789862}
-  - component: {fileID: 1486147882628915090}
-  - component: {fileID: 8684708313101679908}
   - component: {fileID: -4308324611528332081}
+  - component: {fileID: -7060690955930484580}
   m_Layer: 0
   m_Name: Dirt Mound
   m_TagString: Untagged
@@ -158,48 +157,6 @@ PolygonCollider2D:
       - {x: -0.95693916, y: -0.1945612}
       - {x: -1.0299679, y: -0.011917252}
   m_UseDelaunayMesh: 0
---- !u!114 &1486147882628915090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8483464061350950413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e54c1fac5882f154b9ae1a0c9b43b2b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentPlantState: 0
-  plantPrefab1: {fileID: 3045903464280934043, guid: 959c0e5af4ca6a448a0360e76d708f49, type: 3}
-  plantPrefab2: {fileID: 7197324680115023312, guid: b3ea0e48831a6d548947ad92c50a2980, type: 3}
-  plantPrefab3: {fileID: 5512665107337129648, guid: b6798d27bf4c430458dff7de3294cce7, type: 3}
-  plantInstance: {fileID: 0}
-  scaleFactor: 1.0001
-  destroyPlantAtScale: 0.5
-  timer: 0
-  plant1Time: 3
-  plant2Time: 3
-  plant3Time: 3
-  isPlanted: 0
-  playerController: {fileID: 0}
---- !u!114 &8684708313101679908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8483464061350950413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a6009a86fcb5c46945a5af901ec92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textPrefab: {fileID: 3132680643347791441, guid: 0a4244a83083319429580fd21140c937, type: 3}
-  text: Plant Seed?
-  planting: {fileID: 1486147882628915090}
-  xOffset: 0
-  yOffset: -300
 --- !u!50 &-4308324611528332081
 Rigidbody2D:
   serializedVersion: 4
@@ -227,3 +184,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7060690955930484580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8483464061350950413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5caf90dad8d5843b64cb1379def1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantPrefab1: {fileID: 5512665107337129648, guid: b6798d27bf4c430458dff7de3294cce7, type: 3}
+  plantPrefab2: {fileID: 1990939391405025281, guid: fb960efdf150ce0428e854489905218d, type: 3}
+  plantPrefab3: {fileID: 679913528520912676, guid: b6c39c9bfa0abad49a88620d16f72c49, type: 3}
+  plantInstance: {fileID: 0}
+  isPlanted: 0
