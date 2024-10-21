@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3838434473624323504}
   - component: {fileID: 8887588743380552569}
   - component: {fileID: 3054551609179308240}
+  - component: {fileID: 7014352685252733960}
   m_Layer: 0
   m_Name: FogRight
   m_TagString: Fog
@@ -33,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 869757021417888624}
+  - {fileID: 9170769561456784490}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3838434473624323504
@@ -121,6 +123,78 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 180
   flipX: 0
+--- !u!114 &7014352685252733960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992913261523568394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78223eb339334255a439199eb4e69843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 4203751473430253657, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
+  initialMinPrefabsPerWave: 1
+  initialMaxPrefabsPerWave: 5
+  initialMinSpawnInterval: 2
+  initialMaxSpawnInterval: 5
+  difficultyMultiplier: 1.1
+  waveCooldown: 5
+--- !u!1 &1139534823128467000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9170769561456784490}
+  - component: {fileID: 5171146789917636381}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9170769561456784490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139534823128467000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.53, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7306740805123597774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5171146789917636381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139534823128467000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78223eb339334255a439199eb4e69843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 4203751473430253657, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
+  initialMinPrefabsPerWave: 1
+  initialMaxPrefabsPerWave: 5
+  initialMinSpawnInterval: 2
+  initialMaxSpawnInterval: 5
+  difficultyMultiplier: 1.1
+  waveCooldown: 5
 --- !u!1 &8366990813790589638
 GameObject:
   m_ObjectHideFlags: 0
