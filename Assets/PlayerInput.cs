@@ -159,10 +159,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Mouse&Keyboard
         m_MouseKeyboard = asset.FindActionMap("Mouse&Keyboard", throwIfNotFound: true);
         m_MouseKeyboard_Move = m_MouseKeyboard.FindAction("Move", throwIfNotFound: true);
-
-        m_MouseKeyboard_Pause = m_MouseKeyboard.FindAction("Pause", throwIfNotFound: true);
-
         m_MouseKeyboard_Plant1 = m_MouseKeyboard.FindAction("Plant1", throwIfNotFound: true);
+        m_MouseKeyboard_Pause = m_MouseKeyboard.FindAction("Pause", throwIfNotFound: true);
         m_MouseKeyboard_Plant2 = m_MouseKeyboard.FindAction("Plant2", throwIfNotFound: true);
         m_MouseKeyboard_Plant3 = m_MouseKeyboard.FindAction("Plant3", throwIfNotFound: true);
     }
@@ -227,25 +225,19 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_MouseKeyboard;
     private List<IMouseKeyboardActions> m_MouseKeyboardActionsCallbackInterfaces = new List<IMouseKeyboardActions>();
     private readonly InputAction m_MouseKeyboard_Move;
-
-    private readonly InputAction m_MouseKeyboard_Pause;
-
     private readonly InputAction m_MouseKeyboard_Plant1;
+    private readonly InputAction m_MouseKeyboard_Pause;
     private readonly InputAction m_MouseKeyboard_Plant2;
     private readonly InputAction m_MouseKeyboard_Plant3;
-
     public struct MouseKeyboardActions
     {
         private @PlayerInput m_Wrapper;
         public MouseKeyboardActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_MouseKeyboard_Move;
-
-        public InputAction @Pause => m_Wrapper.m_MouseKeyboard_Pause;
-
         public InputAction @Plant1 => m_Wrapper.m_MouseKeyboard_Plant1;
+        public InputAction @Pause => m_Wrapper.m_MouseKeyboard_Pause;
         public InputAction @Plant2 => m_Wrapper.m_MouseKeyboard_Plant2;
         public InputAction @Plant3 => m_Wrapper.m_MouseKeyboard_Plant3;
-
         public InputActionMap Get() { return m_Wrapper.m_MouseKeyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,14 +250,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-
-            @Pause.started += instance.OnPause;
-            @Pause.performed += instance.OnPause;
-            @Pause.canceled += instance.OnPause;
-
             @Plant1.started += instance.OnPlant1;
             @Plant1.performed += instance.OnPlant1;
             @Plant1.canceled += instance.OnPlant1;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
             @Plant2.started += instance.OnPlant2;
             @Plant2.performed += instance.OnPlant2;
             @Plant2.canceled += instance.OnPlant2;
@@ -279,21 +269,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-
-            @Pause.started -= instance.OnPause;
-            @Pause.performed -= instance.OnPause;
-            @Pause.canceled -= instance.OnPause;
-
             @Plant1.started -= instance.OnPlant1;
             @Plant1.performed -= instance.OnPlant1;
             @Plant1.canceled -= instance.OnPlant1;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
             @Plant2.started -= instance.OnPlant2;
             @Plant2.performed -= instance.OnPlant2;
             @Plant2.canceled -= instance.OnPlant2;
             @Plant3.started -= instance.OnPlant3;
             @Plant3.performed -= instance.OnPlant3;
             @Plant3.canceled -= instance.OnPlant3;
-
         }
 
         public void RemoveCallbacks(IMouseKeyboardActions instance)
@@ -314,12 +301,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface IMouseKeyboardActions
     {
         void OnMove(InputAction.CallbackContext context);
-
-        void OnPause(InputAction.CallbackContext context);
-
         void OnPlant1(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
         void OnPlant2(InputAction.CallbackContext context);
         void OnPlant3(InputAction.CallbackContext context);
-
     }
 }
