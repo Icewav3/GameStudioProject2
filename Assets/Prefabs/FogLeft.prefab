@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 7542043578551653930}
   - component: {fileID: 9063819899738045818}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ Transform:
   m_GameObject: {fileID: 4062217508306600577}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.53, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -252,9 +252,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 4203751473430253657, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
-  initialMinPrefabsPerWave: 1
-  initialMaxPrefabsPerWave: 5
-  difficultyMultiplier: 1.1
-  waveCooldown: 0
-  enemiesPerWave: 1
-  initialWaveDelay: 0
