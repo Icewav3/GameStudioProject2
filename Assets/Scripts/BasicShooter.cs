@@ -23,6 +23,8 @@ public class BasicShooter : MonoBehaviour
             //shoot.Play();
             Rigidbody2D bulletRg = bullet.GetComponent<Rigidbody2D>();
             Vector3 direction = (transform.position.x > 0 ? transform.right : -transform.right);
+            SpriteRenderer sprite = bullet.GetComponentInChildren<SpriteRenderer>();
+            sprite.flipX = (transform.position.x > 0 ? false : true);
             bulletRg.AddForce(direction*_speed);
             _nextFire = Time.time + fireRate;
         }
