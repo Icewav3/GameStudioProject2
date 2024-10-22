@@ -42,7 +42,7 @@ public class Damageable : MonoBehaviour
     protected virtual void Die()
     {
         onDeath?.Invoke();
-        plantable.isPlanted = false;
+        if (plantable != null) plantable.isPlanted = false;
         Destroy(this.gameObject);
     }
 }
