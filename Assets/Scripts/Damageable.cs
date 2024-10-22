@@ -12,6 +12,7 @@ public class Damageable : MonoBehaviour
     // Events triggered on health change and death.
     public UnityEvent onHealthChanged = new UnityEvent();
     public UnityEvent onDeath = new UnityEvent();
+    public Plantable plantable;
 
     //private GameObject healthBarObject; // Health bar game object.
     //private Image healthBar; // Health bar image component.
@@ -20,6 +21,7 @@ public class Damageable : MonoBehaviour
     {
         //healthBar = healthBarObject.GetComponent<Image>();
         health = Maxhealth;
+        plantable = GetComponentInParent<Plantable>();
     }
 
     // Reduces health and updates the health bar.
@@ -40,6 +42,7 @@ public class Damageable : MonoBehaviour
     protected virtual void Die()
     {
         onDeath?.Invoke();
+        plantable.isPlanted = false;
         Destroy(this.gameObject);
     }
 }
