@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1808224423931456211}
   - component: {fileID: 4392945848973593942}
   - component: {fileID: 8971858346949789862}
-  - component: {fileID: -4308324611528332081}
   - component: {fileID: -7060690955930484580}
   m_Layer: 0
   m_Name: Dirt Mound
@@ -157,33 +156,6 @@ PolygonCollider2D:
       - {x: -0.95693916, y: -0.1945612}
       - {x: -1.0299679, y: -0.011917252}
   m_UseDelaunayMesh: 0
---- !u!50 &-4308324611528332081
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8483464061350950413}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &-7060690955930484580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5caf90dad8d5843b64cb1379def1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantPrefab1: {fileID: 5512665107337129648, guid: b6798d27bf4c430458dff7de3294cce7, type: 3}
+  plantPrefab1: {fileID: 4736934444833528951, guid: e6fea9faf21db934e92b495f96dd78dc, type: 3}
   plantPrefab2: {fileID: 1990939391405025281, guid: fb960efdf150ce0428e854489905218d, type: 3}
   plantPrefab3: {fileID: 679913528520912676, guid: b6c39c9bfa0abad49a88620d16f72c49, type: 3}
   plantInstance: {fileID: 0}

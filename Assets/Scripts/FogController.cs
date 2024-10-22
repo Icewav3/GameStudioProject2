@@ -16,9 +16,21 @@ namespace DefaultNamespace
         private float _currentTime;
         private float _time;
         private GameObject fogObject;
-        public bool IsPaused { get; set; } = false;
+        private bool isPaused = false;
         private BoxCollider2D _fogCollider;
-
+        public bool IsPaused
+        {
+            get
+            {
+                Debug.Log($"{nameof(IsPaused)} getter called. Value: {isPaused}");
+                return isPaused;
+            }
+            set
+            {
+                isPaused = value;
+                Debug.Log($"{nameof(IsPaused)} setter called. New Value: {isPaused}");
+            }
+        }
         private void Awake()
         {
             fogObject = this.gameObject;
@@ -28,7 +40,7 @@ namespace DefaultNamespace
 
         public void Update()
         {
-            if(!IsPaused)
+            if(!isPaused)
             {
                 UpdateFogPosition();
             }

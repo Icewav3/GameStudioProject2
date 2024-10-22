@@ -5,17 +5,20 @@ namespace DefaultNamespace
     public class SunflowerCollider : MonoBehaviour
     {
         private FogController _fogController;
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            _fogController = other.GetComponent<FogController>();
-            if (_fogController)
+            var a = other.GetComponentInChildren<FogController>();
+            if (a)
             {
+                _fogController = a;
                 _fogController.IsPaused = true;
             }
         }
 
         private void OnDestroy()
         {
+            print("i die");
+            print(_fogController);
             if (_fogController)
             {
                 _fogController.IsPaused = false;
