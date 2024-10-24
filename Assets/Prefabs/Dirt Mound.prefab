@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4392945848973593942}
   - component: {fileID: 8971858346949789862}
   - component: {fileID: -7060690955930484580}
+  - component: {fileID: 5370933123329317170}
   m_Layer: 0
   m_Name: Dirt Mound
   m_TagString: Untagged
@@ -173,3 +174,16 @@ MonoBehaviour:
   plantPrefab3: {fileID: 679913528520912676, guid: b6c39c9bfa0abad49a88620d16f72c49, type: 3}
   plantInstance: {fileID: 0}
   isPlanted: 0
+--- !u!114 &5370933123329317170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8483464061350950413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8fe2caa80bbc534abeccad84b57cfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageToShow: Plant Seed?

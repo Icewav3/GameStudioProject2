@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+//This is attached to the Player, and will display different messages based on whichever object you are currently triggering in the scene.
 public class MessageUI : MonoBehaviour
 {
-    public TextMeshProUGUI displayArea;
+    public TextMeshPro displayArea;
     private Vector3 offset;
 
     public float xOffset = 0.0f;
