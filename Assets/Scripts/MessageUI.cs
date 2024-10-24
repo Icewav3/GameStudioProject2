@@ -8,6 +8,7 @@ public class MessageUI : MonoBehaviour
 {
     public TextMeshPro displayArea;
     private Vector3 offset;
+    private DisplayMessage displayMessage;
 
     public float xOffset = 0.0f;
     public float yOffset = 3.5f;
@@ -29,14 +30,25 @@ public class MessageUI : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<DisplayMessage>() != null)
         {
-            displayArea.text = collision.gameObject.GetComponent<DisplayMessage>().getMessage();
-            displayArea.enabled = true;
+            displayMessage = collision.gameObject.GetComponent<DisplayMessage>();
+            displayArea.text = displayMessage.getMessage();
+            if (displayMessage.canDisplayMessage)
+            {
+                displayArea.enabled = true;
+            }
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
+        if (collision.gameObject.GetComponent<DisplayMessage>() != null)
+        {
+            if (!displayMessage.canDisplayMessage)
+            {
+                displayArea.enabled = false;
+            }
+        }
+            
     }
 
     private void OnTriggerExit2D(Collider2D collision)
