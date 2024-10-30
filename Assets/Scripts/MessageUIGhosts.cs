@@ -24,30 +24,25 @@ public class MessageUIGhosts : MonoBehaviour
     {
         displayIconLeft.SetActive(false);
         displayIconRight.SetActive(false);
+        floats = new List<float>();
     }
 
     private void Update()
     {
         offset = new Vector3(xOffset, yOffset, 0.0f);
-        displayIconLeft.transform.position = target.transform.position + offset;
-        displayIconRight.transform.position = target.transform.position - offset;
+        displayIconLeft.transform.position = target.transform.position - offset;
+        displayIconRight.transform.position = target.transform.position + offset;
         ghosts = GameObject.FindGameObjectsWithTag("Enemy");
         if(ghosts.Length > 0)
         {
             GetGhostPositions();
             floats.Clear();
         }
-        else
-        {
-            hasPositive = false;
-            hasNegative = false;
-        }
         ToggleIcon();
     }
 
     private void ToggleIcon()
     {
-        Debug.Log("We found an enemy object in the scene.");
         if (hasNegative)
         {
             displayIconLeft.SetActive(true);
@@ -67,25 +62,26 @@ public class MessageUIGhosts : MonoBehaviour
     }
     private void GetGhostPositions()
     {
-        floats = new List<float>();
+        hasPositive = false;
+        hasNegative = false;
+
         for(int g = 0; g < ghosts.Length; g++) {
             floats.Add(ghosts[g].transform.position.x);
 
         }
         for(int i = 0; i < floats.Count; i++)
         {
-            if (floats[i] > 10.0f)
+            if (floats[i] > displayIconRight.transform.position.x)
             {
                 hasPositive = true;
             }
-            else if (floats[i] < 10.0f)
+            else if (floats[i] < displayIconLeft.transform.position.x)
             {
                 hasNegative = true;
             }
-            else
+            if(hasNegative && hasPositive)
             {
-                hasPositive = false;
-                hasNegative = false;
+                break;
             }
         }
     }
