@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1808224423931456211}
   - component: {fileID: 4392945848973593942}
-  - component: {fileID: 8971858346949789862}
   - component: {fileID: -7060690955930484580}
+  - component: {fileID: 5370933123329317170}
+  - component: {fileID: 2351026527489609867}
   m_Layer: 0
   m_Name: Dirt Mound
   m_TagString: Untagged
@@ -86,8 +87,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &8971858346949789862
-PolygonCollider2D:
+--- !u!114 &-7060690955930484580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8483464061350950413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5caf90dad8d5843b64cb1379def1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantPrefab1: {fileID: 4736934444833528951, guid: e6fea9faf21db934e92b495f96dd78dc, type: 3}
+  plantPrefab2: {fileID: 1990939391405025281, guid: fb960efdf150ce0428e854489905218d, type: 3}
+  plantPrefab3: {fileID: 679913528520912676, guid: b6c39c9bfa0abad49a88620d16f72c49, type: 3}
+  plantInstance: {fileID: 0}
+  isPlanted: 0
+--- !u!114 &5370933123329317170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8483464061350950413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8fe2caa80bbc534abeccad84b57cfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageToShow: Plant Seed?
+--- !u!58 &2351026527489609867
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,57 +150,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -1.0299679, y: -0.011917252}
-      - {x: -1.1225644, y: 0.35070494}
-      - {x: -1.1613295, y: 0.71411574}
-      - {x: -1.0773351, y: 0.96949315}
-      - {x: -0.792, y: 1}
-      - {x: 1.0037434, y: 0.99937606}
-      - {x: 1.1160976, y: 0.8328471}
-      - {x: 1.1194432, y: 0.58089644}
-      - {x: 1.0314075, y: 0.15414849}
-      - {x: 0.9740377, y: -0.03489578}
-      - {x: 0.89966375, y: -0.20867251}
-      - {x: 0.79971504, y: -0.3582342}
-      - {x: 0.67814064, y: -0.48338953}
-      - {x: 0.53888994, y: -0.58394724}
-      - {x: 0.38591248, y: -0.6597158}
-      - {x: 0.22315788, y: -0.7105043}
-      - {x: 0.0545751, y: -0.7361208}
-      - {x: -0.115886256, y: -0.7363747}
-      - {x: -0.28427684, y: -0.7110742}
-      - {x: -0.4466472, y: -0.66002804}
-      - {x: -0.599048, y: -0.583045}
-      - {x: -0.7375299, y: -0.47993374}
-      - {x: -0.85814345, y: -0.3505029}
-      - {x: -0.95693916, y: -0.1945612}
-      - {x: -1.0299679, y: -0.011917252}
-  m_UseDelaunayMesh: 0
---- !u!114 &-7060690955930484580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8483464061350950413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd5caf90dad8d5843b64cb1379def1ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plantPrefab1: {fileID: 4736934444833528951, guid: e6fea9faf21db934e92b495f96dd78dc, type: 3}
-  plantPrefab2: {fileID: 1990939391405025281, guid: fb960efdf150ce0428e854489905218d, type: 3}
-  plantPrefab3: {fileID: 679913528520912676, guid: b6c39c9bfa0abad49a88620d16f72c49, type: 3}
-  plantInstance: {fileID: 0}
-  isPlanted: 0
+  serializedVersion: 2
+  m_Radius: 0.75

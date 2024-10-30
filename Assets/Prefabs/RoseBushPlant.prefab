@@ -55,6 +55,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  plantable: {fileID: 0}
 --- !u!61 &346891665129382864
 BoxCollider2D:
   m_ObjectHideFlags: 0

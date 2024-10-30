@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6961933716988322954, guid: 84eaf041565f98242a8d9df6e153cd6a, type: 3}
+  m_Sprite: {fileID: 826481589, guid: fd13c48f80ef62345b85ce55d1527e7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7215837894002004539}
   - component: {fileID: 1401831874694583337}
   - component: {fileID: 5503063149369087727}
+  - component: {fileID: 1962549611988052449}
   m_Layer: 7
   m_Name: EnemyShadow
   m_TagString: Enemy
@@ -115,7 +116,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7810834189195744800}
@@ -136,7 +137,19 @@ MonoBehaviour:
   Maxhealth: 3
   onHealthChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1962549611988052449}
+        m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
+        m_MethodName: UpdateSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -241,3 +254,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 1401831874694583337}
+--- !u!114 &1962549611988052449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203751473430253657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f7e41ceea2fd8458256563ed75b306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ghosts:
+  - {fileID: 826481589, guid: fd13c48f80ef62345b85ce55d1527e7b, type: 3}
+  - {fileID: -1303014376, guid: fd13c48f80ef62345b85ce55d1527e7b, type: 3}
+  - {fileID: 1538369320, guid: fd13c48f80ef62345b85ce55d1527e7b, type: 3}

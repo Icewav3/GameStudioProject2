@@ -8,6 +8,7 @@ public class Plantable : MonoBehaviour
     public GameObject plantPrefab3;
     public GameObject plantInstance;
     public bool isPlanted;
+    private DisplayMessage displayMessage;
 
     private PlayerController playerController;
 
@@ -15,12 +16,14 @@ public class Plantable : MonoBehaviour
     {
         isPlanted = false;
         playerController = FindObjectOfType<PlayerController>();
+        displayMessage = GetComponent<DisplayMessage>();
     }
 
     public void SpawnPlant(GameObject plantPrefab)
     {
         plantInstance = Instantiate(plantPrefab, transform.position, Quaternion.identity, transform);
         isPlanted = true;
+        displayMessage.canDisplayMessage = false;
     }
 
     public void OnTriggerStay2D(Collider2D collision)
