@@ -10,11 +10,9 @@ public class MessageUIGhosts : MonoBehaviour
 
     public GameObject displayIconLeft;
     public GameObject displayIconRight;
-    public GameObject target;
     private GameObject[] ghosts;
     private List<float> floats;
-    public float xOffset = 0.0f;
-    public float yOffset = 3.5f;
+    private Camera mainCam;
 
     private bool hasNegative;
     private bool hasPositive;
@@ -22,6 +20,7 @@ public class MessageUIGhosts : MonoBehaviour
 
     void Start()
     {
+        mainCam = Camera.main;
         displayIconLeft.SetActive(false);
         displayIconRight.SetActive(false);
         floats = new List<float>();
@@ -29,53 +28,52 @@ public class MessageUIGhosts : MonoBehaviour
 
     private void Update()
     {
-        offset = new Vector3(xOffset, yOffset, 0.0f);
-        displayIconLeft.transform.position = new Vector3(target.transform.position.x - offset.x, target.transform.position.y + offset.y, target.transform.position.z - offset.z);
-        displayIconRight.transform.position = new Vector3(target.transform.position.x + offset.x, target.transform.position.y + offset.y, target.transform.position.z - offset.z);
+
         ghosts = GameObject.FindGameObjectsWithTag("Enemy");
-        if(ghosts.Length > 0)
+        if(ghosts.Length == 0)
+        {
+            hasPositive = false;
+            hasNegative = false;
+        }
+        else
         {
             GetGhostPositions();
-            floats.Clear();
         }
         ToggleIcon();
     }
 
     private void ToggleIcon()
     {
-        if (hasNegative)
+        if (displayIconLeft != null)
         {
-            displayIconLeft.SetActive(true);
+            displayIconLeft.SetActive(hasNegative);
         }
-        else
+
+        if (displayIconRight != null)
         {
-            displayIconLeft.SetActive(false);
-        }
-        if (hasPositive)
-        {
-            displayIconRight.SetActive(true);
-        }
-        else
-        {
-            displayIconRight.SetActive(false);
+            displayIconRight.SetActive(hasPositive);
         }
     }
     private void GetGhostPositions()
     {
+        floats.Clear();
         hasPositive = false;
         hasNegative = false;
 
-        for(int g = 0; g < ghosts.Length; g++) {
+        Vector3 leftBound = mainCam.ViewportToWorldPoint(new Vector3(0, 0, mainCam.nearClipPlane));
+        Vector3 rightBound = mainCam.ViewportToWorldPoint(new Vector3(1, 0, mainCam.nearClipPlane));
+
+        for (int g = 0; g < ghosts.Length; g++) {
             floats.Add(ghosts[g].transform.position.x);
 
         }
         for(int i = 0; i < floats.Count; i++)
         {
-            if (floats[i] > displayIconRight.transform.position.x)
+            if (floats[i] > rightBound.x)
             {
                 hasPositive = true;
             }
-            else if (floats[i] < displayIconLeft.transform.position.x)
+            else if (floats[i] < leftBound.x)
             {
                 hasNegative = true;
             }
