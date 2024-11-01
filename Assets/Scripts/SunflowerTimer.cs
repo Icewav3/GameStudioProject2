@@ -9,6 +9,7 @@ public class SunflowerTimer : MonoBehaviour
     private float countDownTime;
     public bool timerStarted;
     public Color emptyColor;
+    public Color nearFullColor;
     public Color defaultColor;
     public Image bagImage;
 
@@ -20,6 +21,7 @@ public class SunflowerTimer : MonoBehaviour
         timerStarted = false;
         countDownTime = 0;
         emptyColor = new Color(230.0f / 255.0f, 100.0f / 255.0f, 100.0f / 255.0f, 40.0f / 255.0f);
+        nearFullColor = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f, 160.0f / 255.0f);
         defaultColor = new Color(255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f, 255.0f / 255.0f);
         bagImage.color = defaultColor;
     }
@@ -33,14 +35,16 @@ public class SunflowerTimer : MonoBehaviour
             LerpColor();
             if (countDownTime >= defaultTime)
             {
-               timerStarted = false;
+                timerStarted = false;
                 countDownTime = 0;
+                bagImage.color = defaultColor;
             }
         }
     }
 
     private void LerpColor()
     {
-        bagImage.color = Color.Lerp(emptyColor, defaultColor, countDownTime / defaultTime);
+        bagImage.color = Color.Lerp(emptyColor, nearFullColor, countDownTime / defaultTime);
     }
 }
+
