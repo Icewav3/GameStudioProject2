@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.08, y: -1.15}
+  m_AnchoredPosition: {x: -2, y: -1.5}
   m_SizeDelta: {x: 10.8109, y: 4.6555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1200623455749835736
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 5930230268330398129, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,8 +103,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
+  m_sharedMaterial: {fileID: 5930230268330398129, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -242,7 +242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.1, y: 1.91}
+  m_AnchoredPosition: {x: -2, y: 1}
   m_SizeDelta: {x: 10.8109, y: 4.6555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1073470281981828358
@@ -265,7 +265,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 5930230268330398129, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,8 +309,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A and D = Left and Right
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
+  m_sharedMaterial: {fileID: 5930230268330398129, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -413,7 +413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.08, y: 0.66}
+  m_AnchoredPosition: {x: -2, y: 0}
   m_SizeDelta: {x: 10.8109, y: 4.6555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8087120922351299120
@@ -436,7 +436,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 5930230268330398129, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -480,8 +480,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1 = plant sunflower (stops fog while alive)
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
+  m_sharedMaterial: {fileID: 5930230268330398129, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -584,7 +584,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.17, y: 0.35}
+  m_AnchoredPosition: {x: -2, y: -2.5}
   m_SizeDelta: {x: 10.8109, y: 4.6555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &3195820843025997130
@@ -607,7 +607,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 5930230268330398129, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -651,8 +651,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Don't let the ghosts into your house!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
+  m_sharedMaterial: {fileID: 5930230268330398129, guid: 3730fd60a2e696b4c9448a7fca430abb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
