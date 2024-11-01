@@ -104,6 +104,7 @@ MonoBehaviour:
   plantPrefab3: {fileID: 679913528520912676, guid: b6c39c9bfa0abad49a88620d16f72c49, type: 3}
   plantInstance: {fileID: 0}
   isPlanted: 0
+  timer: {fileID: 0}
 --- !u!114 &5370933123329317170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8fe2caa80bbc534abeccad84b57cfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canDisplayMessage: 1
   messageToShow: Plant Seed?
 --- !u!58 &2351026527489609867
 CircleCollider2D:
