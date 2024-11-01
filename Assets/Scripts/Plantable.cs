@@ -9,6 +9,8 @@ public class Plantable : MonoBehaviour
     public GameObject plantInstance;
     public bool isPlanted;
     private DisplayMessage displayMessage;
+    private SunflowerTimer sunTimer;
+    private RoseTimer roseTimer;
 
     private PlayerController playerController;
 
@@ -17,6 +19,8 @@ public class Plantable : MonoBehaviour
         isPlanted = false;
         playerController = FindObjectOfType<PlayerController>();
         displayMessage = GetComponent<DisplayMessage>();
+        sunTimer = FindAnyObjectByType<SunflowerTimer>();
+        roseTimer = FindAnyObjectByType<RoseTimer>();
     }
 
     public void SpawnPlant(GameObject plantPrefab)
@@ -30,17 +34,19 @@ public class Plantable : MonoBehaviour
     {
         if (!isPlanted && collision.gameObject.CompareTag("Player"))
         {
-            if (playerController.plant1WasPressed)
+            if (playerController.plant1WasPressed && !sunTimer.timerStarted)
             {
                 SpawnPlant(plantPrefab1);
+                sunTimer.timerStarted = true;
             }
-            else if (playerController.plant2WasPressed)
+            else if (playerController.plant2WasPressed && !roseTimer.timerStarted)
             {
                 SpawnPlant(plantPrefab2);
+                roseTimer.timerStarted = true;
             }
             else if (playerController.plant3WasPressed)
             {
-                SpawnPlant(plantPrefab3);
+                //SpawnPlant(plantPrefab3);
             }
         }
     }

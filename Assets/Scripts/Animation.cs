@@ -14,7 +14,7 @@ public class Animation : MonoBehaviour
     {
         if (!SceneStateManager.gameIsPaused)
         {
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 animator.SetBool("IsMove", true);
             }
