@@ -6807,7 +6807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f9d169eaa81340842863c0a053203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTime: 3
+  defaultTime: 10
   timerStarted: 0
   emptyColor: {r: 0, g: 0, b: 0, a: 0}
   nearFullColor: {r: 0, g: 0, b: 0, a: 0}
@@ -10960,7 +10960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de32eb13e334d1942bf9ab2db0c0881e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTime: 3
+  defaultTime: 10
   timerStarted: 0
   emptyColor: {r: 0, g: 0, b: 0, a: 0}
   nearFullColor: {r: 0, g: 0, b: 0, a: 0}
