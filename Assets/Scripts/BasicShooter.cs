@@ -24,8 +24,8 @@ public class BasicShooter : MonoBehaviour
             Rigidbody2D bulletRg = bullet.GetComponent<Rigidbody2D>();
             Vector3 direction = (transform.position.x > 0 ? transform.right : -transform.right);
             SpriteRenderer sprite = bullet.GetComponentInChildren<SpriteRenderer>();
-            sprite.flipX = (transform.position.x > 0 ? false : true);
-            bulletRg.AddForce(direction*_speed);
+            sprite.flipX = (!(transform.position.x > 0));
+            bulletRg.AddForce(direction*0.1f); //DONT ASK ABOUT THIS AND DONT CHANGE IT JUST WORKS
             _nextFire = Time.time + fireRate;
         }
     }
