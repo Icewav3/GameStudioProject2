@@ -15,7 +15,7 @@ namespace DefaultNamespace
         private int initialMaxPrefabsPerWave = 3;
 
         [Tooltip("Multiplies all spawns")]
-        private float difficultyMultiplier = 1.1f;
+        private float difficultyMultiplier = 0.5f;
 
         [Tooltip("In seconds")]
         private float waveCooldown = 15f;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4002015188685969315}
   - component: {fileID: 4877131950811100813}
   - component: {fileID: 4804320760344226746}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FogLeft
   m_TagString: Fog
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6745634124557515229}
   - component: {fileID: 3169109059364372642}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Art
   m_TagString: Fog
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7542043578551653930}
   - component: {fileID: 9063819899738045818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,9 +252,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 4203751473430253657, guid: 21460a045fe73b04ead11a70d741009c, type: 3}
-  initialMinPrefabsPerWave: 1
-  initialMaxPrefabsPerWave: 5
-  difficultyMultiplier: 1.1
-  waveCooldown: 0
-  enemiesPerWave: 1
-  initialWaveDelay: 0

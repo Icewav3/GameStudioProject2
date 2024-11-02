@@ -7,7 +7,7 @@ public class SpriteController : MonoBehaviour
     [SerializeField]
     private Sprite[] Ghosts;
     private SpriteRenderer _sprite;
-    private int _index = 1; //why the hell does this not start at 0 when indexing sprites?????
+    private int _index = 0;
     void Awake()
     {
         //invoked from inspector event
@@ -18,11 +18,12 @@ public class SpriteController : MonoBehaviour
     public void UpdateSprite()
     {
         _index += 1;
-        _sprite.sprite = Ghosts[_index];
-        //this is cuz i think somone will break it
-        if (_index > 3)
+        // Disable the sprite if there are no more items left in the array
+        if (_index >= Ghosts.Length)
         {
             _sprite.enabled = false;
+            return; // Exit the method early to avoid accessing out of bounds
         }
+        _sprite.sprite = Ghosts[_index];
     }
 }
